@@ -1,308 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta name="description" content="Embedding-Aware Quantum-Classical SVMs for Scalable Quantum Machine Learning">
+  <meta property="og:title" content="Embedding-Aware Quantum-Classical SVMs for Scalable Quantum Machine Learning"/>
+  <meta property="og:description" content="A hybrid quantum-classical pipeline combining class-balanced k-means distillation with pretrained Vision Transformer embeddings"/>
+  <meta property="og:url" content="https://sebasmos.github.io/embedding-aware-quantum-svm"/>
+  <meta property="og:image" content="static/images/quantum_svm_banner.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-  <!-- Twitter -->
+  <meta name="twitter:title" content="Embedding-Aware Quantum-Classical SVMs for Scalable Quantum Machine Learning">
+  <meta name="twitter:description" content="A hybrid quantum-classical pipeline combining class-balanced k-means distillation with pretrained Vision Transformer embeddings">
+  <meta name="twitter:image" content="static/images/quantum_svm_banner.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="keywords" content="quantum machine learning, quantum support vector machines, vision transformers, quantum kernels, hybrid quantum-classical">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
+  <title>Embedding-Aware Quantum-Classical SVMs for Scalable Quantum Machine Learning</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <style>
+    .quantum-circuit {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      color: white;
+      text-align: center;
+    }
+    
+    .embedding-flow {
+      background: #fafbfc;
+      border-radius: 20px;
+      border: 3px solid #e1e8ed;
+      padding: 30px;
+      margin: 20px 0;
+      position: relative;
+    }
+    
+    .quantum-advantage-box {
+      background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      border-radius: 15px;
+      padding: 25px;
+      color: white;
+      margin: 20px 0;
+    }
+
+    h1.title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2.title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #444;
+      text-align: center;
+      margin-bottom: 15px;
+      background: linear-gradient(to right, indigo, indigo, skyblue, indigo, indigo);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.5;
+    }
+
+    h3.title {
+      font-family: 'Google Sans', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    footer.footer {
+      background-color: white;
+      box-shadow: none;
+    }
+
+    .hero .box {
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      word-wrap: break-word;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .columns {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    table {
+      table-layout: fixed;
+      width: 100%;
+    }
+
+    th, td {
+      word-wrap: break-word;
+    }
+
+    .performance-table {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    .best-result {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+      font-weight: bold;
+      border-radius: 5px;
+      padding: 2px 4px;
+    }
+  </style>
 </head>
 <body>
 
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Embedding-Aware Quantum-Classical SVMs for Scalable Quantum Machine Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/sebasmos777/" target="_blank">Sebastián Andrés Cajas Ordóñez</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Luis Fernando Torres Torres</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Mario Bifulco</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Carlos Andres Duran</a><sup>4</sup>,</span>
+            <span class="author-block">
+              <a href="#" target="_blank">Cristian Bosch</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/ricardo-simon-carbajo-7141464/" target="_blank">Ricardo Simon Carbajo</a><sup>1</sup>
+            </span>
           </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
 
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>National Irish Centre for AI (CeADAR), University College Dublin (UCD), Dublin, Ireland<br>
+              <sup>2</sup>SISTEMIC Research Group, University of Antioquia, Medellín, Colombia<br>
+              <sup>3</sup>Department of Computer Science, University of Torino, Torino, Italy<br>
+              <sup>4</sup>Corporation for Aerospace Initiatives (CASIRI), University of Cauca, Popayán, Colombia
+            </span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
+          </div>
+
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2508.00024" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
                   </span>
-                  </div>
+                  <span>PDF</span>
+                </a>
+              </span>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
+              <span class="link-block">
+                <a href="https://github.com/sebasmos/QuantumVE" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
                   </span>
+                  <span>Code</span>
+                </a>
+              </span>
 
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2508.00024" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/papers/2508.00024" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em; vertical-align: middle;">
+                  </span>
+                  <span>Hugging Face</span>
                 </a>
               </span>
             </div>
@@ -314,207 +228,542 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
+<!-- Audio Summary Section -->
+<section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div style="background: linear-gradient(135deg, #8b5cf6, #a855f7); padding: 2rem; border-radius: 12px; margin-bottom: 1.5rem;">
+          <h3 style="color: white; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">
+            Main Findings:
+          </h3>
+          <p style="color: white; font-size: 1.1rem; margin-bottom: 1.5rem;">
+            We demonstrate the first systematic evidence that quantum kernel advantage depends critically on embedding choice, revealing fundamental synergy between transformer attention and quantum feature spaces.
+          </p>
+          <ul style="color: white; font-size: 1rem; margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">ViT embeddings uniquely enable quantum advantage, achieving up to 8.02% accuracy improvements on Fashion-MNIST</li>
+            <li style="margin-bottom: 0.5rem;">CNN features show consistent performance degradation in quantum kernels</li>
+            <li style="margin-bottom: 0.5rem;">16-qubit tensor network simulation provides scalable quantum machine learning pathway</li>
+             </ul>
+        
+        <audio controls style="width: 100%; max-width: 600px; margin: 0 auto; display: block;">
+          <source src="static/audio/summary.mp4" type="audio/mp4">
+          Your browser does not support the audio element.
+        </audio>
+        
+        <div class="has-text-centered" style="margin-top: 0.75rem;">
+          <p style="color: #adb5bd; font-size: 0.875rem; text-align: center;">
+            <i class="fas fa-robot" style="margin-right: 5px;"></i>
+            This summary was automatically generated by Google's NotebookLM
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
+<!-- Pipeline Overview Section -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Hybrid Quantum-Classical Pipeline</h2>
+        
+        <div class="hero-body">
+
+          <img src="static/images/fig1.png" alt="Pipeline" width="1000" />
+          <p><strong> Complete pipeline overview showing the sequential steps from data extraction to QSVM evaluation</strong></p>
+          <h4 class="subtitle has-text-centered"><b>Embedding-Aware QSVM Framework.</b></h4>
+          The pipeline combines class-balanced k-means distillation with pretrained embeddings, followed by PCA compression and quantum kernel classification using tensor network simulation. This approach reduces complexity from O(70000²) to O(1600²) kernel evaluations while preserving essential dataset characteristics.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Quantum Support Vector Machines face scalability challenges due to high-dimensional quantum states and hardware limitations. We propose an <strong>embedding-aware quantum-classical pipeline</strong> combining class-balanced k-means distillation with pretrained Vision Transformer embeddings.
+          </p>
+          <p>
+            Our key finding: <strong>ViT embeddings uniquely enable quantum advantage</strong>, achieving up to 8.02% accuracy improvements over classical SVMs on Fashion-MNIST and 4.42% on MNIST, while CNN features show performance degradation. Using 16-qubit tensor network simulation via cuTensorNet, we provide the first systematic evidence that quantum kernel advantage depends critically on embedding choice.
+          </p>
+          <p>
+            This reveals fundamental synergy between transformer attention and quantum feature spaces, providing a practical pathway for scalable quantum machine learning that leverages modern neural architectures. The framework demonstrates that achieving quantum advantage requires careful algorithm-representation co-design rather than naive application of quantum methods.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End paper abstract -->
 
-
-<!-- Image carousel -->
+<!-- Key Features -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <h2 class="title is-3 has-text-centered">Key Features</h2>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">⚛️ Quantum-Classical Hybrid</h3>
+            <p>Strategic combination of classical preprocessing with quantum kernel methods, enabling scalable quantum machine learning on current hardware.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">🎯 Embedding-Aware Design</h3>
+            <p>First systematic investigation of how different embedding strategies affect quantum advantage, revealing transformer-quantum synergy.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">📈 Proven Quantum Advantage</h3>
+            <p>Consistent performance improvements with ViT embeddings: up to 8.02% on Fashion-MNIST and 4.42% on MNIST over classical SVMs.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+<!-- Quantum Circuit Architecture -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Quantum Circuit Architecture</h2>
+        
+        <div class="hero-body">
+          
+          <img src="static/images/fig2.png" alt="Pipeline" width="1000" />
+          <p><strong>Quantum circuit diagram showing the 4-qubit parameterized circuit with Hadamard gates, RZ and RY rotations, and CNOT entanglement gates</strong></p>
+          <h4 class="subtitle has-text-centered"><b>Data Re-uploading Quantum Feature Map.</b></h4>
+          Each qubit is initialized with Hadamard gates, followed by parameterized RZ and RY rotations for data encoding. CNOT gates create entanglement between adjacent qubits, forming an embedding-aware quantum feature map that leverages the exponentially large Hilbert space dimension 2^n.
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
+<!-- Performance Results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Quantum Advantage with Modern Embeddings</h2>
+        
+        <div class="performance-table">
+          <h4 class="title is-4">Quantum vs Classical SVM Performance Comparison</h4>
+          <table class="table is-striped is-hoverable" style="width: 100%; margin: auto;">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Embedding Type</th>
+                <th>Classic SVM Acc</th>
+                <th>Quantum SVM Acc</th>
+                <th>Quantum Advantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="7" style="background-color: #f0f0f0; font-weight: bold;"><strong>MNIST</strong></td>
+                <td>Raw Pixels</td>
+                <td>0.945</td>
+                <td>0.887</td>
+                <td>-6.14%</td>
+              </tr>
+              <tr>
+                <td>EffNet-512</td>
+                <td>0.969</td>
+                <td>0.935</td>
+                <td>-3.55%</td>
+              </tr>
+              <tr>
+                <td>EffNet-1536</td>
+                <td>0.973</td>
+                <td>0.948</td>
+                <td>-2.58%</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-B/32-512</td>
+                <td>0.948</td>
+                <td><span style="color: blue; font-weight: bold;">0.990</span></td>
+                <td><span style="color: green; font-weight: bold;">+4.42%</span></td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-B/16-512</td>
+                <td>0.954</td>
+                <td><span style="color: blue; font-weight: bold;">0.995</span></td>
+                <td><span style="color: green; font-weight: bold;">+4.25%</span></td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-L/14</td>
+                <td><span style="color: blue; font-weight: bold;">0.983</span></td>
+                <td>0.990</td>
+                <td><span style="color: green; font-weight: bold;">+0.76%</span></td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-L/14@336-768</td>
+                <td><span style="color: blue; font-weight: bold;">0.984</span></td>
+                <td>0.993</td>
+                <td><span style="color: green; font-weight: bold;">+0.94%</span></td>
+              </tr>
+              <tr>
+                <td rowspan="7" style="background-color: #f0f0f0; font-weight: bold;"><strong>Fashion-MNIST</strong></td>
+                <td>Raw Pixels</td>
+                <td>0.783</td>
+                <td>0.730</td>
+                <td>-6.71%</td>
+              </tr>
+              <tr>
+                <td>EffNet-512</td>
+                <td><span style="color: blue; font-weight: bold;">0.917</span></td>
+                <td>0.887</td>
+                <td>-3.29%</td>
+              </tr>
+              <tr>
+                <td>EffNet-1536</td>
+                <td><span style="color: blue; font-weight: bold;">0.916</span></td>
+                <td>0.877</td>
+                <td>-4.26%</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-B/32-512</td>
+                <td>0.848</td>
+                <td><span style="color: blue; font-weight: bold;">0.900</span></td>
+                <td><span style="color: green; font-weight: bold;">+6.18%</span></td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-L/14</td>
+                <td>0.871</td>
+                <td><span style="color: blue; font-weight: bold;">0.897</span></td>
+                <td><span style="color: green; font-weight: bold;">+3.01%</span></td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>ViT-L/14@336-768</td>
+                <td>0.865</td>
+                <td><span style="color: blue; font-weight: bold;">0.900</span></td>
+                <td><span style="color: green; font-weight: bold;">+4.02%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h4 class="subtitle has-text-centered">
+          <b>Quantum advantage emerges specifically with transformer-based representations, revealing fundamental synergy between quantum kernels and modern neural embeddings.</b>
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Cross-Validation Analysis -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Comprehensive Cross-Validation Results</h2>
+        
+        <div class="hero-body">
+           <img src="static/images/fig3.png" alt="Pipeline" width="1000" />
+          
+          <p><strong>Violin plots showing test accuracy distributions for MNIST across K-fold cross-validation</strong></p>
+          
+           <img src="static/images/fig4.png" alt="Pipeline" width="1000" />
+          <p><strong>Violin plots showing test accuracy distributions for Fashion-MNIST across K-fold cross-validation</strong></p>
+           <img src="static/images/fig3.png" alt="Pipeline" width="1000" />
+          
+          <p><strong>Violin plots showing test accuracy distributions for MNIST across K-fold cross-validation</strong></p>
+          
+           <img src="static/images/fig4.png" alt="Pipeline" width="1000" />
+          <p><strong>Violin plots showing test accuracy distributions for Fashion-MNIST across K-fold cross-validation</strong></p>
+          <h4 class="subtitle has-text-centered"><b>Stable and Robust Quantum Advantage.</b></h4>
+          ViT-based quantum models show consistently higher accuracies and lower variance compared to baselines and EfficientNet-based QSVMs. The narrow, high-accuracy distributions confirm that quantum advantage is stable and reproducible across different data splits.
+        </div>
 
+        <div class="performance-table">
+          <h4 class="title is-4">Detailed Cross-Validation Performance (Best Models)</h4>
+          <table class="table is-striped is-hoverable" style="width: 140%; margin: 0 auto; font-size: 0.8rem;">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Model</th>
+                <th>Test Acc</th>
+                <th>Precision</th>
+                <th>F1</th>
+                <th>AUC</th>
+                <th>Time (s)</th>
+                <th>Memory (MB)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="8" style="background-color: #f0f0f0; font-weight: bold;">MNIST</td>
+                <td>Baseline</td>
+                <td>0.882 ± 0.010</td>
+                <td>0.887 ± 0.010</td>
+                <td>0.882 ± 0.011</td>
+                <td>0.990 ± 0.004</td>
+                <td>4492.196 ± 39.285</td>
+                <td>44116.842 ± 25.978</td>
+              </tr>
+              <tr>
+                <td>Baseline+</td>
+                <td>0.884 ± 0.018</td>
+                <td>0.888 ± 0.019</td>
+                <td>0.884 ± 0.018</td>
+                <td>0.991 ± 0.004</td>
+                <td>3812.316 ± 42.187</td>
+                <td>43537.845 ± 22.515</td>
+              </tr>
+              <tr>
+                <td>QSVM: EffNet-512</td>
+                <td>0.889 ± 0.018</td>
+                <td>0.893 ± 0.015</td>
+                <td>0.889 ± 0.017</td>
+                <td>0.992 ± 0.003</td>
+                <td>3910.851 ± 25.007</td>
+                <td><strong>43506.193 ± 21.365</strong></td>
+              </tr>
+              <tr>
+                <td>QSVM: EffNet-1536</td>
+                <td>0.904 ± 0.020</td>
+                <td>0.906 ± 0.019</td>
+                <td>0.904 ± 0.020</td>
+                <td>0.994 ± 0.003</td>
+                <td>3819.504 ± 23.488</td>
+                <td>43566.972 ± 22.614</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-B/32-512</td>
+                <td><span style="color: blue; font-weight: bold;">0.962 ± 0.008</span></td>
+                <td>0.963 ± 0.007</td>
+                <td>0.962 ± 0.008</td>
+                <td>0.999 ± 0.000</td>
+                <td>3900.742 ± 24.954</td>
+                <td>43510.314 ± 21.536</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-B/16-512</td>
+                <td><span style="color: blue; font-weight: bold;">0.973 ± 0.003</span></td>
+                <td>0.974 ± 0.003</td>
+                <td>0.973 ± 0.003</td>
+                <td>0.999 ± 0.000</td>
+                <td><strong>3763.170 ± 25.646</strong></td>
+                <td>43513.467 ± 20.800</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-L/14</td>
+                <td>0.969 ± 0.009</td>
+                <td>0.970 ± 0.008</td>
+                <td>0.969 ± 0.008</td>
+                <td>0.999 ± 0.001</td>
+                <td>3816.003 ± 31.957</td>
+                <td>43520.979 ± 18.243</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td><strong>QSVM: ViT-L/14@336-768</strong></td>
+                <td><span style="color: blue; font-weight: bold;">0.976 ± 0.010</span></td>
+                <td><span style="color: blue; font-weight: bold;">0.977 ± 0.010</span></td>
+                <td><span style="color: blue; font-weight: bold;">0.975 ± 0.010</span></td>
+                <td><span style="color: blue; font-weight: bold;">0.999 ± 0.001</span></td>
+                <td>3939.404 ± 24.480</td>
+                <td>43520.375 ± 22.726</td>
+              </tr>
+              <tr>
+                <td rowspan="8" style="background-color: #f0f0f0; font-weight: bold;">FashionMNIST</td>
+                <td>Baseline</td>
+                <td>0.725 ± 0.048</td>
+                <td>0.723 ± 0.041</td>
+                <td>0.716 ± 0.044</td>
+                <td>0.963 ± 0.003</td>
+                <td>4456.288 ± 32.991</td>
+                <td>44086.054 ± 22.615</td>
+              </tr>
+              <tr>
+                <td>Baseline+</td>
+                <td>0.734 ± 0.028</td>
+                <td>0.727 ± 0.029</td>
+                <td>0.723 ± 0.027</td>
+                <td>0.963 ± 0.004</td>
+                <td>3803.786 ± 27.142</td>
+                <td>43510.356 ± 19.410</td>
+              </tr>
+              <tr>
+                <td>QSVM: EffNet-512</td>
+                <td>0.823 ± 0.016</td>
+                <td>0.823 ± 0.019</td>
+                <td>0.818 ± 0.016</td>
+                <td>0.980 ± 0.002</td>
+                <td>3797.365 ± 29.575</td>
+                <td><strong>43256.111 ± 21.782</strong></td>
+              </tr>
+              <tr>
+                <td>QSVM: EffNet-1536</td>
+                <td>0.809 ± 0.022</td>
+                <td>0.808 ± 0.020</td>
+                <td>0.805 ± 0.020</td>
+                <td>0.980 ± 0.004</td>
+                <td>3887.396 ± 26.549</td>
+                <td>43301.836 ± 17.939</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-B/32-512</td>
+                <td>0.818 ± 0.015</td>
+                <td>0.821 ± 0.014</td>
+                <td>0.816 ± 0.015</td>
+                <td>0.981 ± 0.002</td>
+                <td>3773.245 ± 25.367</td>
+                <td>43250.348 ± 24.488</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-B/16-512</td>
+                <td>0.829 ± 0.008</td>
+                <td>0.831 ± 0.009</td>
+                <td>0.827 ± 0.009</td>
+                <td>0.982 ± 0.004</td>
+                <td>3853.586 ± 38.180</td>
+                <td>43258.243 ± 23.672</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td>QSVM: ViT-L/14</td>
+                <td>0.831 ± 0.021</td>
+                <td>0.831 ± 0.022</td>
+                <td>0.829 ± 0.022</td>
+                <td>0.981 ± 0.003</td>
+                <td><strong>3766.821 ± 21.742</strong></td>
+                <td>43266.337 ± 20.614</td>
+              </tr>
+              <tr style="background-color: #d4edda;">
+                <td><strong>QSVM: ViT-L/14@336-768</strong></td>
+                <td><strong>0.841 ± 0.019</strong></td>
+                <td><strong>0.841 ± 0.020</strong></td>
+                <td><strong>0.840 ± 0.020</strong></td>
+                <td><strong>0.983 ± 0.002</strong></td>
+                <td>3859.313 ± 20.656</td>
+                <td>43265.254 ± 20.394</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Computational Efficiency -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Computational Efficiency Analysis</h2>
+        
+        <div class="hero-body">
+          <!-- Add Figures 5 and 6 here -->
 
+          <img src="static/images/fig5.png" alt="Pipeline" width="1000" />
+          
+          <p><strong> Runtime vs accuracy comparison for MNIST showing optimal balance between performance and efficiency</strong></p>
+          <img src="static/images/fig6.png" alt="Pipeline" width="1000" />
+          
+          <p><strong> Runtime vs accuracy comparison for Fashion-MNIST showing trade-offs between computational cost and classification performance</strong></p>
+          <h4 class="subtitle has-text-centered"><b>Optimal Performance-Efficiency Trade-off.</b></h4>
+          ViT-B/16-512 offers the best balance, achieving 97.3% accuracy with fastest runtime (3,763 seconds). Memory usage remains consistent around 43GB across all configurations, demonstrating scalable quantum simulation capabilities.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Paper poster -->
+<!-- Generalization Analysis -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Model Generalization</h2>
+        
+        <div class="hero-body">
+          <!-- Add Figures 7 and 8 here -->
+
+          <img src="static/images/fig7.png" alt="Pipeline" width="1000" />
+          <h4 class="subtitle has-text-centered"><b>Strong Cross-Validation to Test Set Alignment.</b></h4>
+          Clear diagonal structure with minimal off-diagonal errors confirms robust generalization. The alignment between cross-validation and held-out test results demonstrates that high accuracy reflects true performance across all classes, not overfitting to specific categories.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+      <h2 class="title is-3 has-text-centered">Methodology Overview</h2>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">📊 Data Distillation</h3>
+            <p>Class-balanced k-means clustering reduces dataset size from 70,000 to 2,000 samples while preserving representative coverage and eliminating class imbalance effects.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">🎯 Embedding Extraction</h3>
+            <p>Pretrained EfficientNet-B3 and Vision Transformer variants provide rich semantic features, with PCA compression to match 16-qubit hardware constraints.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <h3 class="title is-5">⚛️ Quantum Kernel</h3>
+            <p>Tensor network simulation via cuTensorNet enables efficient quantum kernel computation using data re-uploading techniques, ensuring scalability and accuracy.</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
+  </div>
 </section>
-<!--End BibTex citation -->
 
 
-  <footer class="footer">
+      
+    <h2 class="title is-3 has-text-centered">Acknowledgements</h2>
+<div class="columns is-centered" style="margin-top: 20px;">
+  <div class="column is-narrow" style="margin-right: 20px;">
+    <figure class="image is-128x128">
+      <img src="static/images/manolo.png" alt="Manolo Logo">
+    </figure>
+  </div>
+  <div class="column is-narrow" style="margin-right: 20px;">
+    <figure class="image is-128x128">
+      <img src="static/images/ceadar.png" alt="Ceadar Logo">
+    </figure>
+  </div>
+  <div class="column is-narrow">
+    <figure class="image is-128x128">
+      <img src="static/images/google-cloude.png" alt="Google Cloud Logo">
+    </figure>
+  </div>
+</div>
+
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. 
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>
